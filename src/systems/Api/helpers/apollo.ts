@@ -3,7 +3,7 @@ import fetch from 'cross-fetch'
 
 import { ApolloClient, InMemoryCache, HttpLink, from } from '@apollo/client'
 
-const URI = process.env.NEXT_PUBLIC_GRAPHQL_URL
+const URI = import.meta.env.VITE_GRAPHQL_URL
 const httpLink = new HttpLink({ uri: URI, fetch })
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
